@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import './App.css';
 import { connect } from 'react-redux'
 
-class App extends Component {
+
+class SupportComp extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Feedback!</h1>
-          <h4><i>How are you feeling today ?</i></h4>
-       
+          <h4><i></i></h4>
         </header>
-        <input className="feeling" type="number" />
+        <h2>How well are you being supported !</h2>
+        <input type="number"></input>
         <button>Submit</button>
         <br/>
       </div>
@@ -20,4 +20,4 @@ class App extends Component {
   }
 }
 
-export default connect()(App);
+export default connect()(SupportComp);
