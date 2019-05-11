@@ -3,9 +3,7 @@ import axios from 'axios';
 import { connect } from 'react-redux'
 
 
-
-
-class App extends Component {
+class CommentsComp extends Component {
   render() {
     return (
       <div className="App">
