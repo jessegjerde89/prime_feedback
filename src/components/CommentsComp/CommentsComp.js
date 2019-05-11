@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+
 
 
 class CommentsComp extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Feedback!</h1>
-          <h4><i>Don't Forget Your Feedback !</i></h4>
-        </header>
+      <div>
           <h2>Any comments you want to leave? </h2>
           <input placeholder='Comments' />
+      <Link to='/review'><button> Submit </button></Link>
         <br/>
       </div>
     );

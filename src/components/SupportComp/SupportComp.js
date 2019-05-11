@@ -4,14 +4,15 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 
+
 class SupportComp extends Component {
   render() {
     return (
-      <div className="App">
+      <div >
        
         <h2>How well are you being supported !</h2>
         <input type="number"></input>
-        <button>Submit</button>
+        <Link to='/comments'><button>Submit</button></Link>
         <br/>
       </div>
     );

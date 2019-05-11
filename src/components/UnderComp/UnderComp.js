@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import Header from '../Header/Header'
+
 
 
 class UnderComp extends Component {
@@ -10,8 +10,8 @@ class UnderComp extends Component {
     return (
       <div >
         <h2>How well are you understanding the content ?</h2>
-        <input type="number" placeholder="level of 1-5"> </input>
-        <Link to='/supported'><button>Submit </button></Link>
+        <input type="number" placeholder="level of 1-5" /> 
+        <Link to='/supported'><button>Submit</button></Link>
         <br/>
       </div>
     );
