@@ -6,20 +6,38 @@ import { Link } from 'react-router-dom'
 
 class FeelingComp extends Component {
 
-handleClick = (event) =>{
-  event.preventDefault(); 
- 
+state = {
+  student : {
+    feeling: 0
+  }
 }
 
 
+handleChange = (event) =>{
+  this.setState ({
+    feeling: event.targe.value
+   })
+ }
 
+handleClick = (event) => {
+  event.prevendDefault(); 
+  this.sendToReview(this.state.student)
+}
+
+sendToReview = (student) => {
+let rating = {
+  feeling: student.feeling
+}
+
+this.props.dispatch({type: 'FEELING', payload: rating})
+}
 
     render() {
         return (
           <div>
             <h2>How are you feeling today ?</h2>
-            <input className="feeling" type="number" />
-            <Link to='/understanding'><button>Submit</button></Link>
+            <input className="feeling" type="number" onChange={() => this.handleChange('')} />
+            <Link to='/understanding'><button onClick={this.handleClick} >Submit</button></Link>
             <br/>
           </div>
         );
