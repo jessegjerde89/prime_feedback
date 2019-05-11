@@ -13,7 +13,7 @@ class FeelingComp extends Component {
         
             <h2><i>How are you feeling today ?</i></h2>
             <input className="feeling" type="number" />
-            <Link to ='/undestanding'><button>Submit</button></Link>
+            <Link to ='/understanding'> <button>Submit</button></Link>
             <br/>
           </div>
         );

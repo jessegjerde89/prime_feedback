@@ -9,7 +9,7 @@ class Header extends Component {
 
 <header className="App-header">
     <h1 className="App-title">Feedback!</h1>
-        <h4><i>How are you feeling today ?</i></h4>
+        <h4><i>Don't Forget It !</i></h4>
        
 </header>
 

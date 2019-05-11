@@ -14,10 +14,11 @@ class App extends Component {
   render() {
     return (
      <Router>
+      
       <div className="App">
-        {/* <Header /> */}
-        {/* <input className="feeling" type="number" /> */}
-        {/* <button>Submit</button> */}
+        <Header /> 
+        {/* <input className="feeling" type="number" />
+        <button>Submit</button>  */}
         <br/>
 
       <Route exact path='/' component={FeelingComp} />

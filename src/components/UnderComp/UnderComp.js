@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import Header from '../Header/Header'
+
 
 
 class UnderComp extends Component {
