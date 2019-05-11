@@ -4,6 +4,11 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 
+handleClick = (event) =>{
+  event.preventDefault(); 
+  this.
+}
+
 
 class CommentsComp extends Component {
   render() {

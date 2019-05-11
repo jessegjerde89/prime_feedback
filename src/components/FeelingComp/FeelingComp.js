@@ -6,8 +6,9 @@ import { Link } from 'react-router-dom'
 
 
 
-handleClick = () =>{
-  
+handleClick = (event) =>{
+  event.preventDefault(); 
+  this.
 }
 
 
