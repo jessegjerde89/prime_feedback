@@ -2,7 +2,16 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux'
 
-
+getReview = () => {
+    axios({ 
+        method: 'POST',
+        url: '/'
+    }).then(response => {
+        console.log( 'response in POST' response)
+    }).catch(error => {
+        console.log('error in post', error)
+    })
+}
 
 
 class ReviewComp extends Component {
