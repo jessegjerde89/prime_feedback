@@ -13,14 +13,14 @@ state = {
 }
 
 
-handleChange = (event) =>{
+handleChange = (newVal, event) =>{
   this.setState ({
-    feeling: event.targe.value
+    [newVal]: event.target.value
    })
  }
 
 handleClick = (event) => {
-  event.prevendDefault(); 
+  event.preventDefault(); 
   this.sendToReview(this.state.student)
 }
 
@@ -36,7 +36,7 @@ this.props.dispatch({type: 'FEELING', payload: rating})
         return (
           <div>
             <h2>How are you feeling today ?</h2>
-            <input className="feeling" type="number" onChange={() => this.handleChange('')} />
+            <input className="feeling" type="number" onChange={(e) => this.handleChange('feeling', e)} />
             <Link to='/understanding'><button onClick={this.handleClick} >Submit</button></Link>
             <br/>
           </div>

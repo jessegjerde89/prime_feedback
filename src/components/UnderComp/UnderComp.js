@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom'
 
 class UnderComp extends Component {
 
-handleClick = (event) =>{
-  event.preventDefault(); 
+// handleClick = (event) =>{
+//   event.preventDefault(); 
   
-}
+// }
 
 
 
