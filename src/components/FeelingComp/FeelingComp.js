@@ -4,16 +4,16 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 // import LinkButton from '../LinkButton' 
 
-
+class FeelingComp extends Component {
 
 handleClick = (event) =>{
   event.preventDefault(); 
-  this.
+ 
 }
 
 
 
-class FeelingComp extends Component {
+
     render() {
         return (
           <div>

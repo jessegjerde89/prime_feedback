@@ -3,14 +3,15 @@ import axios from 'axios';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
+class UnderComp extends Component {
 
 handleClick = (event) =>{
   event.preventDefault(); 
-  this.
+  
 }
 
 
-class UnderComp extends Component {
+
   render() {
     return (
       <div >
