@@ -6,12 +6,17 @@ import { Link } from 'react-router-dom'
 
 
 
+handleClick = () =>{
+  
+}
+
+
+
 class FeelingComp extends Component {
     render() {
         return (
           <div>
-        
-            <h2><i>How are you feeling today ?</i></h2>
+            <h2>How are you feeling today ?</h2>
             <input className="feeling" type="number" />
             <Link to='/understanding'><button>Submit</button></Link>
             <br/>
