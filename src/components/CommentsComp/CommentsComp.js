@@ -4,8 +4,15 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 
-
 class CommentsComp extends Component {
+
+handleClick = (event) =>{
+ 
+  
+}
+
+
+
   render() {
     return (
       <div>
