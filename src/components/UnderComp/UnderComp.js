@@ -11,7 +11,7 @@ class UnderComp extends Component {
       <div >
         <h2>How well are you understanding the content ?</h2>
         <input type="number" placeholder="level of 1-5"> </input>
-        <button>Submit </button>
+        <Link to='/supported'><button>Submit </button></Link>
         <br/>
       </div>
     );
