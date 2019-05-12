@@ -21,7 +21,6 @@ handleChange = ( event) => {
 
 handleSubmit = (event) => {
   event.preventDefault(); 
-  this.sendToReview(this.state.feeling)
   this.props.dispatch({type: 'FEELING', payload: this.state.feeling})
 }
 
