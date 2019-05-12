@@ -11,12 +11,12 @@ state = {
 }
 
 
-handleChange = (event) =>{
-  this.setState({ 
-    comments: this.taget.value
-  })
- 
-}
+handleChange = (event) => {
+  this.setState({
+      feeling: event.target.value
+   })
+ }
+
 
 handleSubmit = (event) =>{
   event.preventDefault(); 
@@ -26,14 +26,12 @@ handleSubmit = (event) =>{
 }
 
 
-
-
   render() {
     return (
       <div>
         <form onSubmit={this.handleSubmit} >
           <h2> Any comments you want to leave? </h2>
-          <input placeholder='Comments' type="text" onChange={this.handleChange} />
+          <input placeholder='Comments' type="text" onChange={this.handleChange}  />
       <Link to='/review'><button> Submit </button></Link>
         <br/>
         </form>
