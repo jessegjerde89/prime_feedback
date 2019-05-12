@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import axios from 'axios'
 import { withRouter } from 'react-router';
+import {Button} from '@material-ui/core'; 
+
 
 class ReviewComp extends Component {
 
@@ -35,9 +37,9 @@ handleClick = () =>{
             this.props.feedback.support === '' ||
             this.props.feedback.comments === '' ) {
 
-            displayButton = (<button disabled > Complete </button>)
+            displayButton = (<button disabled className="mdc-button mdc-button--raised"> Complete </button>)
         } else {
-            displayButton = (<button  onClick={this.handleClick}> Complete </button>)
+            displayButton = (<button className="mdc-button mdc-button--raised" onClick={this.handleClick}> Complete </button>)
         }
 
 
