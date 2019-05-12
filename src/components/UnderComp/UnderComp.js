@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+
 
 class UnderComp extends Component {
 
 state = {
-    understand: ''
+    understanding: ''
   
 }
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import { connect } from 'react-redux'
+import axios from 'axios'
+import { withRouter } from 'react-router';
 
 class ReviewComp extends Component {
 
@@ -12,20 +13,36 @@ handleClick = () =>{
     axios.post('/feedback', this.props.feedback )
       .then(response => {
         console.log( 'response in POST', response)
-        this.props.history.push('/success'); 
     }).catch(error => {
         console.log('error in post', error)
     })
-
+    this.props.history.push('/success');
+    
 }
 
-handleClick = () =>{
+    
+// handleClick = () =>{
 
-    this.props.history.push('/success'); 
-}
+//     this.props.history.push('/success'); 
+// }
 
     render () {
+        let displayButton = '' 
         console.log(this.props.feedback)
+
+        if ( this.props.feedback.feeling === '' || 
+            this.props.feedback.understand === '' ||
+            this.props.feedback.support === '' ||
+            this.props.feedback.comments === '' ) {
+
+            displayButton = (<button disabled > Complete </button>)
+        } else {
+            displayButton = (<button  onClick={this.handleClick}> Complete </button>)
+        }
+
+
+
+
         return (
         <div>
             <h1>Review Your Feedback</h1>
@@ -35,7 +52,7 @@ handleClick = () =>{
               <h3>Comments: {this.props.feedback.comments}</h3>
 
                {/* ToDo: Display Incomplete then complete when all fields filled  */}
-               <button disabled = {!this.props.isFilled} onClick={this.handleClick}> Complete </button> 
+               {displayButton}
         </div>
         )
     }
@@ -47,4 +64,4 @@ const mapReduxStateToProps = (reduxState) => ({
 
   });
   
-  export default connect(mapReduxStateToProps)(ReviewComp);
+  export default withRouter(connect(mapReduxStateToProps)(ReviewComp));
