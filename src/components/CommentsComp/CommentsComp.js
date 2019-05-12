@@ -25,4 +25,10 @@ handleClick = (event) =>{
   }
 }
 
-export default connect ()(CommentsComp);
+
+const mapToReduxState = (reduxState) => {
+  return {
+     reduxState
+  }
+}
+export default connect(mapToReduxState)(CommentsComp);
