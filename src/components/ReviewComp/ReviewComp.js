@@ -10,7 +10,7 @@ class ReviewComp extends Component {
 getReview = () => {
     axios({ 
         method: 'POST',
-        url: '/'
+        url: '/feedback'
     }).then(response => {
         console.log( 'response in POST', response)
     }).catch(error => {
@@ -24,10 +24,10 @@ getReview = () => {
         return (
         <div>
             <h1>Review Your Feedback</h1>
-              <h3>Feelings: </h3>
-              <h3>Understanding: </h3>
-              <h3>Support: </h3>
-              <h3>Comments: </h3>
+              <h3>Feelings: {this.props.feedback.feeling}</h3>
+              <h3>Understanding: {this.props.feedback.understand}</h3>
+              <h3>Support: {this.props.feedback.support}</h3>
+              <h3>Comments: {this.props.feedback.comments}</h3>
 
                {/* ToDo: Display Incomplete then complete when all fields filled  */}
                <button onClick={this.handleClick}> Complete </button> 
@@ -37,7 +37,9 @@ getReview = () => {
 }
 
 const mapReduxStateToProps = (reduxState) => ({
-    reduxState
+   
+        feedback: reduxState.statesReducer
+
   });
   
   export default connect(mapReduxStateToProps)(ReviewComp);

@@ -18,8 +18,9 @@ handleChange = ( event) => {
 
 handleSubmit = (event) => {
   event.preventDefault(); 
-  this.sendToReview(this.state.understand)
+ 
   this.props.dispatch({ type: 'UNDERSTAND', payload: this.state.understand})
+  this.props.history.push('/supported'); 
 }
 
 // sendToReview = (student) => {
@@ -38,7 +39,7 @@ handleSubmit = (event) => {
         <form onSubmit={this.handleSubmit} >
         <h2>How well are you understanding the content ?</h2>
         <input className='understand' type="number" min="1" max="5" onChange={this.handleChange} />
-        <Link to='/supported'><button>Submit</button></Link>
+        <button type="submit">Submit</button>
         <br/>
         </form>
       </div>

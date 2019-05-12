@@ -19,6 +19,7 @@ class SupportComp extends Component {
   handleSubmit = (event) => {
     event.preventDefault(); 
     this.props.dispatch({ type: 'SUPPORT', payload: this.state.support})
+    this.props.history.push('/comments')
   }
   
   // sendToReview = (student) => {
@@ -37,7 +38,7 @@ class SupportComp extends Component {
        <form onSubmit={this.handleSubmit}>
         <h2>How well are you being supported ?</h2>
         <input className='support' type="number" onChange={this.handleChange} />
-        <Link to='/comments'><button>Submit</button></Link>
+        <button>Submit</button>
         <br/>
        </form>
       </div>

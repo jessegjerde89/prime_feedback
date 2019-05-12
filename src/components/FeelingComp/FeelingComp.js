@@ -22,6 +22,7 @@ handleChange = ( event) => {
 handleSubmit = (event) => {
   event.preventDefault(); 
   this.props.dispatch({type: 'FEELING', payload: this.state.feeling})
+  this.props.history.push('/understanding')
 }
 
 // sendToReview = (student) => {
@@ -37,9 +38,8 @@ handleSubmit = (event) => {
             <h2>How are you feeling today ?</h2>
             <input className="feeling" type="number" min='1' max='5' onChange={this.handleChange} />
             {/* <input className="feeling" type="number" onChange={(e) => this.handleChange(e)} /> */}
-            {/* <input className="feeling" type="number" onClick = {this.storeFeeling} /> */}
-            
-            <Link to='/understanding'><button type="submit" >Submit</button> </Link>
+            {/* <Link to='/understanding'><button type="submit" >Submit</button> </Link> */}
+            <button type="submit" >Submit</button>
            
             <br/>
             </form>
