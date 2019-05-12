@@ -17,17 +17,15 @@ const userFeedback = {
 }
 
 
-
-
 const statesReducer = (state = userFeedback , action ) => {
     if (action.type === "FEELING") {
-         return {feeling = action.payload}; 
+          {userFeedback.feeling = action.payload}; 
     } else if ( action.type === "UNDERSTAND") {
-        return {understand = action.payload}; 
+         {userFeedback.understand = action.payload}; 
     } else if ( action.type === "SUPPORT" ) {
-        return { support = action.payload}; 
+        { userFeedback.support = action.payload}; 
     } else if (action.type === "COMMENTS") { 
-        return {comments = action.payload};
+         {userFeedback.comments = action.payload};
 
     }
     return state

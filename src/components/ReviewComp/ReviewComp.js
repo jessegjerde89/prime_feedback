@@ -6,11 +6,13 @@ class ReviewComp extends Component {
 
 
 
+
 handleClick = () =>{
 
 
     axios.post('/feedback', this.props.feedback )
       .then(response => {
+
         console.log( 'response in POST', response)
         this.props.history.push('/success'); 
     }).catch(error => {
@@ -18,6 +20,12 @@ handleClick = () =>{
     })
 
 }
+
+handleClick = () =>{
+
+    this.props.history.push('/success'); 
+}
+
 
 
 

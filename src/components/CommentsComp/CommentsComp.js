@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
@@ -13,7 +12,7 @@ state = {
 
 handleChange = (event) => {
   this.setState({
-      feeling: event.target.value
+      comments: event.target.value
    })
  }
 
@@ -21,8 +20,9 @@ handleChange = (event) => {
 handleSubmit = (event) =>{
   event.preventDefault(); 
   this.props.dispatch({ 
-    type: 'COMMENTS', payload: this.state.comments
-  })
+    type: 'COMMENTS', payload: this.state.comments }); 
+    this.props.history.push('/review'); 
+ 
 }
 
 
@@ -32,7 +32,7 @@ handleSubmit = (event) =>{
         <form onSubmit={this.handleSubmit} >
           <h2> Any comments you want to leave? </h2>
           <input placeholder='Comments' type="text" onChange={this.handleChange}  />
-      <Link to='/review'><button> Submit </button></Link>
+      <button> Submit </button>
         <br/>
         </form>
       </div>

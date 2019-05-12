@@ -9,6 +9,8 @@ import UnderComp from '../UnderComp/UnderComp';
 import SupportComp from '../SupportComp/SupportComp'; 
 import CommentsComp from '../CommentsComp/CommentsComp'; 
 import ReviewComp from '../ReviewComp/ReviewComp'; 
+import Success from '../Success/Success'
+
 
 class App extends Component {
   render() {
@@ -26,6 +28,7 @@ class App extends Component {
       <Route exact path='/supported' component={SupportComp} />
       <Route exact path='/comments' component={CommentsComp} />
       <Route exact path='/review' component={ReviewComp} />
+      <Route exact path='/success' component= {Success} />
 
       </div>
     </Router> 
