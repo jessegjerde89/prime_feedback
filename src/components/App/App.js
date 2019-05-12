@@ -24,6 +24,8 @@ class App extends Component {
         <button>Submit</button>  */}
         <br/>
 
+
+      {/* All the routes used  */}
       <Route exact path='/' component={FeelingComp} />
       <Route exact path='/understanding' component={UnderComp} />
       <Route exact path='/supported' component={SupportComp} />

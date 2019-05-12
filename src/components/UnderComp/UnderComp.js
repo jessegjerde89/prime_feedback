@@ -10,12 +10,14 @@ state = {
   
 }
 
+// handle change on form input 
 handleChange = ( event) => {
   this.setState({
     understand : event.target.value
   })
 }
 
+// handle submit on form 
 handleSubmit = (event) => {
   event.preventDefault(); 
  
@@ -48,9 +50,4 @@ handleSubmit = (event) => {
 }
 
 
-const mapToReduxState = (reduxState) => {
-  return {
-     reduxState
-  }
-}
-export default connect(mapToReduxState)(UnderComp);
+export default connect()(UnderComp);

@@ -9,14 +9,14 @@ state = {
   comments: ''
 }
 
-
+// handle input change
 handleChange = (event) => {
   this.setState({
       comments: event.target.value
    })
  }
 
-
+// handle submit on form
 handleSubmit = (event) =>{
   event.preventDefault(); 
   this.props.dispatch({ 
@@ -40,7 +40,7 @@ handleSubmit = (event) =>{
   }
 }
 
-
+// map through redux state
 const mapToReduxState = (reduxState) => {
   return {
      reduxState

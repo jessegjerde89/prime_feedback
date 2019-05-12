@@ -8,13 +8,14 @@ class SupportComp extends Component {
       support: ''
   }
   
-
+// handle change on input value on form
   handleChange = (event) => {
     this.setState({
       support : event.target.value
     })
   }
   
+  // handle submit on form 
   handleSubmit = (event) => {
     event.preventDefault(); 
     this.props.dispatch({ type: 'SUPPORT', payload: this.state.support})
@@ -47,9 +48,5 @@ class SupportComp extends Component {
 }
 
 
-const mapToReduxState = (reduxState) => {
-  return {
-     reduxState
-  }
-}
-export default connect(mapToReduxState)(SupportComp);
+
+export default connect()(SupportComp);

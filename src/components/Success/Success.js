@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 
 class Success extends Component {
 
+    // handle submit on form 
+    // send back to starting component
 handleSubmit = (event) =>{
   event.preventDefault(); 
   this.props.history.push('/')

@@ -9,7 +9,9 @@ class ReviewComp extends Component {
 
 
 
-
+// handle click on button 
+// send post request to server 
+// then send user to success page
 handleClick = () =>{
 
     axios.post('/feedback', this.props.feedback )
@@ -32,6 +34,10 @@ handleClick = () =>{
         let displayButton = '' 
         console.log(this.props.feedback)
 
+        // conditional used if all fields are filled or not
+        // if all fields filled, button returns as not disabled
+        // if all fields are not filled, button is disabled 
+
         if ( this.props.feedback.feeling === '' || 
             this.props.feedback.understand === '' ||
             this.props.feedback.support === '' ||
@@ -47,13 +53,14 @@ handleClick = () =>{
 
         return (
         <div>
+            {/* Displays all the users entered info from previous components */}
             <h1>Review Your Feedback</h1>
               <h3>Feelings: {this.props.feedback.feeling}</h3>
               <h3>Understanding: {this.props.feedback.understand}</h3>
               <h3>Support: {this.props.feedback.support}</h3>
               <h3>Comments: {this.props.feedback.comments}</h3>
 
-               {/* ToDo: Display Incomplete then complete when all fields filled  */}
+                {/* Button variable  */}
                {displayButton}
         </div>
         )

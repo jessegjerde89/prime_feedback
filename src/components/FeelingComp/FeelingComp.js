@@ -11,14 +11,14 @@ state = {
   }
 
 
-
+// handle input change on form
 handleChange = ( event) => {
   this.setState({
       feeling: event.target.value
     
    })
  }
-
+// handle submit on form 
 handleSubmit = (event) => {
   event.preventDefault(); 
   this.props.dispatch({type: 'FEELING', payload: this.state.feeling})
@@ -49,9 +49,5 @@ handleSubmit = (event) => {
     }
     
 
-    const mapToReduxState = (reduxState) => {
-      return {
-         feeling : reduxState.feeling
-      }
-  }
-  export default connect(mapToReduxState)(FeelingComp);
+ 
+  export default connect()(FeelingComp);
