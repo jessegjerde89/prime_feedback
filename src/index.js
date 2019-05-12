@@ -15,7 +15,7 @@ const states = (state = [], action ) => {
         return [action.payload]; 
     // } else if ( action.type === "UNDERSTAND") {
     //     return {action.payload}; 
-    // } else if ( action.type === "SUPPORTED" ) {
+    // } else if ( action.type === "SUPPORT" ) {
     //     return { action.payload}; 
     // } else if (action.type === "COMMENTS") {
     //     return {action.payload}; 
