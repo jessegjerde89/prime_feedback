@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+
 
 
 class Success extends Component {
@@ -10,6 +10,7 @@ class Success extends Component {
 
 handleSubmit = (event) =>{
   event.preventDefault(); 
+  this.props.history.push('/')
   
 }
 
@@ -18,9 +19,9 @@ handleSubmit = (event) =>{
     return (
       <div>
         <form onSubmit={this.handleSubmit} >
-          <h2> Any comments you want to leave? </h2>
+          <h2> Thank you for your submission !</h2>
           <input placeholder='Comments' type="text" onChange={this.handleChange}  />
-      <Link to='/review'><button> Submit </button></Link>
+          <button type='submit' > Another Review </button>
         <br/>
         </form>
       </div>

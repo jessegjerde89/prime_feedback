@@ -18,6 +18,12 @@ getReview = () => {
     })
 }
 
+handleClick = () =>{
+
+    this.props.history.push('/success'); 
+}
+
+
 
 
     render () {
