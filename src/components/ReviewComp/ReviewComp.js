@@ -5,17 +5,20 @@ import { connect } from 'react-redux'
 class ReviewComp extends Component {
 
 
-    
 
-getReview = () => {
-    axios({ 
-        method: 'POST',
-        url: '/feedback'
-    }).then(response => {
+
+handleClick = () =>{
+
+
+    axios.post('/feedback', this.props.feedback )
+      .then(response => {
+
         console.log( 'response in POST', response)
+        this.props.history.push('/success'); 
     }).catch(error => {
         console.log('error in post', error)
     })
+
 }
 
 handleClick = () =>{
@@ -26,7 +29,9 @@ handleClick = () =>{
 
 
 
+
     render () {
+        console.log(this.props.feedback)
         return (
         <div>
             <h1>Review Your Feedback</h1>
@@ -36,7 +41,7 @@ handleClick = () =>{
               <h3>Comments: {this.props.feedback.comments}</h3>
 
                {/* ToDo: Display Incomplete then complete when all fields filled  */}
-               <button onClick={this.handleClick}> Complete </button> 
+               <button disabled = {!this.props.isFilled} onClick={this.handleClick}> Complete </button> 
         </div>
         )
     }
