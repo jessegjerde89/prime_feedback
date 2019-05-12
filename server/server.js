@@ -10,6 +10,7 @@ app.use(express.static('build'));
 
 /** ---------- EXPRESS ROUTES ---------- **/
 
+app.use('/api/feedback', feedbackRouter); 
 
 /** ---------- START SERVER ---------- **/
 app.listen(PORT, () => {

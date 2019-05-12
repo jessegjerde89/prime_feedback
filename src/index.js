@@ -11,35 +11,43 @@ import logger from 'redux-logger'
 
 const userFeedback = {
     feeling: '',
-    understanding: '',
+    understand: '',
     support: '',
     comments: ''
 }
 
-const states = (state = {}, action ) => {
+
+
+
+const statesReducer = (state = userFeedback , action ) => {
     if (action.type === "FEELING") {
-         return {action.payload}; 
+         return {feeling = action.payload}; 
     } else if ( action.type === "UNDERSTAND") {
-        return {action.payload}; 
+        return {understand = action.payload}; 
     } else if ( action.type === "SUPPORT" ) {
-        return { action.payload}; 
+        return { support = action.payload}; 
     } else if (action.type === "COMMENTS") { 
-        return {action.payload}; 
-
-
+        return {comments = action.payload};
 
     }
     return state
 }
 
 
+const feedbackReducer = (state = {}, action ) => {
+    if (action.type === "USER_FEEDBACK") {
+        return action.payload
+    }
+    return state; 
+}
+
 
 
 
 const storeInstance = createStore ( 
     combineReducers({
-
-        states 
+        feedbackReducer, 
+        statesReducer 
     }), 
     applyMiddleware(logger)
     
