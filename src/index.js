@@ -9,16 +9,25 @@ import logger from 'redux-logger'
 
 
 
+const userFeedback = {
+    feeling: '',
+    understanding: '',
+    support: '',
+    comments: ''
+}
 
-const states = (state = [], action ) => {
+const states = (state = {}, action ) => {
     if (action.type === "FEELING") {
-        const feels = [action.payload]; 
-    // } else if ( action.type === "UNDERSTAND") {
-    //     return {action.payload}; 
-    // } else if ( action.type === "SUPPORT" ) {
-    //     return { action.payload}; 
-    // } else if (action.type === "COMMENTS") {
-    //     return {action.payload}; 
+         return {action.payload}; 
+    } else if ( action.type === "UNDERSTAND") {
+        return {action.payload}; 
+    } else if ( action.type === "SUPPORT" ) {
+        return { action.payload}; 
+    } else if (action.type === "COMMENTS") { 
+        return {action.payload}; 
+
+
+
     }
     return state
 }
