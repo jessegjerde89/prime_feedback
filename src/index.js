@@ -8,6 +8,7 @@ import {Provider} from 'react-redux'
 import logger from 'redux-logger'
 
 
+
 const userFeedback = {
     feeling: '',
     understanding: '',
@@ -24,6 +25,9 @@ const states = (state = {}, action ) => {
         return { action.payload}; 
     } else if (action.type === "COMMENTS") { 
         return {action.payload}; 
+
+
+
     }
     return state
 }

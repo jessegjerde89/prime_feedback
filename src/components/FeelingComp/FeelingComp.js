@@ -7,42 +7,51 @@ import { Link } from 'react-router-dom'
 class FeelingComp extends Component {
 
 state = {
-  student : {
-    feeling: 0
+    feeling: ''
   }
-}
 
 
-handleChange = (newVal, event) =>{
-  this.setState ({
-    [newVal]: event.target.value
+
+handleChange = ( event) => {
+  this.setState({
+      feeling: event.target.value
+    
    })
  }
 
-handleClick = (event) => {
+handleSubmit = (event) => {
   event.preventDefault(); 
-  this.sendToReview(this.state.student)
+  this.props.dispatch({type: 'FEELING', payload: this.state.feeling})
 }
 
-sendToReview = (student) => {
-let rating = {
-  feeling: student.feeling
-}
-
-this.props.dispatch({type: 'FEELING', payload: rating})
-}
+// sendToReview = (student) => {
+// let rating = {
+//   feeling: student.feeling
+// }
 
     render() {
         return (
           <div>
+           
+            <form onSubmit={this.handleSubmit} >
             <h2>How are you feeling today ?</h2>
-            <input className="feeling" type="number" onChange={(e) => this.handleChange('feeling', e)} />
-            <Link to='/understanding'><button onClick={this.handleClick} >Submit</button></Link>
+            <input className="feeling" type="number" min='1' max='5' onChange={this.handleChange} />
+            {/* <input className="feeling" type="number" onChange={(e) => this.handleChange(e)} /> */}
+            {/* <input className="feeling" type="number" onClick = {this.storeFeeling} /> */}
+            
+            <Link to='/understanding'><button type="submit" >Submit</button> </Link>
+           
             <br/>
+            </form>
           </div>
         );
       }
     }
     
 
-export default connect()(FeelingComp);
+    const mapToReduxState = (reduxState) => {
+      return {
+         feeling : reduxState.feeling
+      }
+  }
+  export default connect(mapToReduxState)(FeelingComp);

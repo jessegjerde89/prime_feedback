@@ -5,26 +5,50 @@ import { Link } from 'react-router-dom'
 
 class SupportComp extends Component {
 
+  state = { 
+      support: ''
+  }
   
 
-handleClick = (event) =>{
-  event.preventDefault(); 
+  handleChange = (event) => {
+    this.setState({
+      support : event.target.value
+    })
+  }
   
-}
+  handleSubmit = (event) => {
+    event.preventDefault(); 
+    this.props.dispatch({ type: 'SUPPORT', payload: this.state.support})
+  }
+  
+  // sendToReview = (student) => {
+  //   let choice = {
+  //     understand: student.support
+  //   }
+  //   this.props.dispatch({ type: 'SUPPORT', payload: choice})
+  // }
+
 
 
 
   render() {
     return (
       <div >
-       
+       <form onSubmit={this.handleSubmit}>
         <h2>How well are you being supported ?</h2>
-        <input type="number"></input>
+        <input className='support' type="number" onChange={this.handleChange} />
         <Link to='/comments'><button>Submit</button></Link>
         <br/>
+       </form>
       </div>
     );
   }
 }
 
-export default connect()(SupportComp);
+
+const mapToReduxState = (reduxState) => {
+  return {
+     reduxState
+  }
+}
+export default connect(mapToReduxState)(SupportComp);

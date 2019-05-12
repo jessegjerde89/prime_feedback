@@ -6,23 +6,44 @@ import { Link } from 'react-router-dom'
 
 class CommentsComp extends Component {
 
-handleClick = (event) =>{
- 
-  
+state = { 
+  comments: ''
 }
 
+
+handleChange = (event) => {
+  this.setState({
+      feeling: event.target.value
+   })
+ }
+
+
+handleSubmit = (event) =>{
+  event.preventDefault(); 
+  this.props.dispatch({ 
+    type: 'COMMENTS', payload: this.state.comments
+  })
+}
 
 
   render() {
     return (
       <div>
-          <h2>Any comments you want to leave? </h2>
-          <input placeholder='Comments' />
+        <form onSubmit={this.handleSubmit} >
+          <h2> Any comments you want to leave? </h2>
+          <input placeholder='Comments' type="text" onChange={this.handleChange}  />
       <Link to='/review'><button> Submit </button></Link>
         <br/>
+        </form>
       </div>
     );
   }
 }
 
-export default connect ()(CommentsComp);
+
+const mapToReduxState = (reduxState) => {
+  return {
+     reduxState
+  }
+}
+export default connect(mapToReduxState)(CommentsComp);
