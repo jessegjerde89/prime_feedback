@@ -1,20 +1,20 @@
 const express = require('express'); 
 const router = express.Router(); 
-const pool = require('..modules/pool'); 
+const pool = require('../modules/pool')
 
 
 
-router.get('/', (req,res) => {
-    console.log('get route'); 
-    pool.query('SELECT * from "feedback"; ')
-    .then( result => {
-        console.log('result from get' result); 
-        res.send(result.rows)
-    }).catch(error => {
-        console.log('error in get', error); 
-        res.sendStatus(500); 
-    })
-})
+// router.get('/', (req,res) => {
+//     console.log('get route'); 
+//     pool.query('SELECT * from "feedback"; ')
+//     .then( result => {
+//         console.log('result from get', result); 
+//         res.send(result.rows)
+//     }).catch(error => {
+//         console.log('error in get', error); 
+//         res.sendStatus(500); 
+//     })
+// })
 
 
 
