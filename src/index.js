@@ -8,17 +8,19 @@ import {Provider} from 'react-redux'
 import logger from 'redux-logger'
 
 
-const states = (state = {}, action ) => {
-    if (action.type === "FEELING") {
-        return { action.payload}; 
-    } else if ( action.type === "UNDERSTAND") {
-        return {action.payload}; 
-    } else if ( action.type === "SUPPORTED" ) {
-        return { action.payload}; 
-    } else if (action.type === "COMMENTS") {
-        return {action.payload}; 
-    }
 
+
+const states = (state = [], action ) => {
+    if (action.type === "FEELING") {
+        return [action.payload]; 
+    // } else if ( action.type === "UNDERSTAND") {
+    //     return {action.payload}; 
+    // } else if ( action.type === "SUPPORTED" ) {
+    //     return { action.payload}; 
+    // } else if (action.type === "COMMENTS") {
+    //     return {action.payload}; 
+    }
+    return state
 }
 
 

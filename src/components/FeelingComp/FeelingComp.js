@@ -7,19 +7,22 @@ import { Link } from 'react-router-dom'
 class FeelingComp extends Component {
 
 state = {
-  student : {
-    feeling: 0
+  student: {
+    feeling: ''
   }
 }
 
 
-handleChange = (newVal, event) =>{
-  this.setState ({
-    [newVal]: event.target.value
+handleChange = (newVal, event) => {
+  this.setState({
+    student: {
+      ...this.state.student, 
+      [newVal]: event.target.value
+    }
    })
  }
 
-handleClick = (event) => {
+handleSubmit = (event) => {
   event.preventDefault(); 
   this.sendToReview(this.state.student)
 }
@@ -35,14 +38,23 @@ this.props.dispatch({type: 'FEELING', payload: rating})
     render() {
         return (
           <div>
+            <form onSubmit={this.handleSubmit} >
             <h2>How are you feeling today ?</h2>
-            <input className="feeling" type="number" onChange={(e) => this.handleChange('feeling', e)} />
-            <Link to='/understanding'><button onClick={this.handleClick} >Submit</button></Link>
+            {/* <input className="feeling" type="number" value= {this.props.feeling} onChange={() => this.handleChange()} /> */}
+            <input className="feeling" type="number" onChange={(e) => this.handleChange(e)} />
+            <Link to='/understanding'><button type="submit" >Submit</button> </Link>
+           
             <br/>
+            </form>
           </div>
         );
       }
     }
     
 
-export default connect()(FeelingComp);
+    const mapToReduxState = (reduxState) => {
+      return {
+         reduxState
+      }
+  }
+  export default connect(mapToReduxState)(FeelingComp);
