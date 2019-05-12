@@ -6,30 +6,28 @@ import { Link } from 'react-router-dom'
 class SupportComp extends Component {
 
   state = { 
-    student: {
       support: ''
-    }
   }
   
 
   handleChange = (newVal, event) => {
     this.setState({
-      [newVal]: event.target.value
+      support : event.target.value
     })
   }
   
   handleSubmit = (event) => {
     event.preventDefault(); 
-    this.sendToReview(this.state.student)
+    this.props.dispatch({ type: 'SUPPORT', payload: this.state.support})
   }
   
-  sendToReview = (student) => {
-    let choice = {
-      understand: student.support
-    }
-    this.props.dispatch({ type: 'SUPPORT', payload: choice})
-  }
-}
+  // sendToReview = (student) => {
+  //   let choice = {
+  //     understand: student.support
+  //   }
+  //   this.props.dispatch({ type: 'SUPPORT', payload: choice})
+  // }
+
 
 
 
@@ -38,7 +36,7 @@ class SupportComp extends Component {
       <div >
        <form>
         <h2>How well are you being supported ?</h2>
-        <input className='support' type="number" onChange={(e) => this.handleChange(e)} />
+        <input className='support' type="number" onChange={this.handleChange} />
         <Link to='/comments'><button>Submit</button></Link>
         <br/>
        </form>
@@ -47,4 +45,10 @@ class SupportComp extends Component {
   }
 }
 
-export default connect()(SupportComp);
+
+const mapToReduxState = (reduxState) => {
+  return {
+     reduxState
+  }
+}
+export default connect(mapToReduxState)(SupportComp);
