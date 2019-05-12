@@ -10,7 +10,7 @@ class SupportComp extends Component {
   }
   
 
-  handleChange = (newVal, event) => {
+  handleChange = (event) => {
     this.setState({
       support : event.target.value
     })
@@ -34,7 +34,7 @@ class SupportComp extends Component {
   render() {
     return (
       <div >
-       <form>
+       <form onSubmit={this.handleSubmit}>
         <h2>How well are you being supported ?</h2>
         <input className='support' type="number" onChange={this.handleChange} />
         <Link to='/comments'><button>Submit</button></Link>
