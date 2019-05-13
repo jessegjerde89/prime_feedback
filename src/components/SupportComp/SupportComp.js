@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
+import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button'
+
 
 class SupportComp extends Component {
 
@@ -37,9 +40,9 @@ class SupportComp extends Component {
       <div >
        <form onSubmit={this.handleSubmit}>
         <h2>How well are you being supported ?</h2>
-        <input className='support' type="number" 
+        <TextField className='support' type="number" 
             min='1' max='5' onChange={this.handleChange} />
-        <button>Submit</button>
+        <Button type="submit" varient="outlined" >Submit</Button>
         <br/>
        </form>
       </div>

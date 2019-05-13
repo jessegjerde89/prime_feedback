@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import axios from 'axios'
 import { withRouter } from 'react-router';
-import {Button} from '@material-ui/core'; 
+import Button from '@material-ui/core/Button'
 
 
 class ReviewComp extends Component {
@@ -43,11 +43,19 @@ handleClick = () =>{
             this.props.feedback.support === '' ||
             this.props.feedback.comments === '' ) {
 
-            displayButton = (<button disabled className="mdc-button mdc-button--raised"> Incomplete </button>)
+            displayButton = 
+            (<button variant="contained" color="primary" >
+                <span >Incomplete</span> 
+                </button>)
         } else {
-            displayButton = (<button className="mdc-button mdc-button--raised" onClick={this.handleClick}> Complete </button>)
+            displayButton = 
+            (<Button  onClick={this.handleClick}> 
+                <span >Complete</span> 
+                </Button>)
         }
 
+
+             
 
 
 

@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 
 import { connect } from 'react-redux'
 
+import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button'
+
 // import LinkButton from '../LinkButton' 
 
 class FeelingComp extends Component {
@@ -36,10 +39,10 @@ handleSubmit = (event) => {
            
             <form onSubmit={this.handleSubmit} >
             <h2>How are you feeling today ?</h2>
-            <input className="feeling" type="number" min='1' max='5' onChange={this.handleChange} />
+            <TextField className="feeling" type="number" min='1' max='5' onChange={this.handleChange} />
             {/* <input className="feeling" type="number" onChange={(e) => this.handleChange(e)} /> */}
             {/* <Link to='/understanding'><button type="submit" >Submit</button> </Link> */}
-            <button type="submit" >Submit</button>
+            <Button variant="outlined" type="submit" >Submit</Button>
            
             <br/>
             </form>

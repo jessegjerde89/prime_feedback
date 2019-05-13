@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 
 import { connect } from 'react-redux'
 
+import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button'
+
 
 class UnderComp extends Component {
 
@@ -40,8 +43,8 @@ handleSubmit = (event) => {
       <div >
         <form onSubmit={this.handleSubmit} >
         <h2>How well are you understanding the content ?</h2>
-        <input className='understand' type="number" min="1" max="5" onChange={this.handleChange} />
-        <button type="submit">Submit</button>
+        <TextField className='understand' type="number" min="1" max="5" onChange={this.handleChange} />
+        <Button variant="outlined" type="submit">Submit</Button>
         <br/>
         </form>
       </div>

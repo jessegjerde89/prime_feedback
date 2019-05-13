@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
+import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button'
 
 
 class CommentsComp extends Component {
@@ -31,8 +33,8 @@ handleSubmit = (event) =>{
       <div>
         <form onSubmit={this.handleSubmit} >
           <h2> Any comments you want to leave? </h2>
-          <input placeholder='Comments' type="text" onChange={this.handleChange}  />
-      <button> Submit </button>
+          <TextField placeholder='Comments' type="text" onChange={this.handleChange}  />
+      <Button type="submit" variant="outlined" color="primary"> Submit </Button>
         <br/>
         </form>
       </div>
