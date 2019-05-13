@@ -34,6 +34,15 @@ handleSubmit = (event) => {
 // }
 
     render() {
+
+
+      // const ranges = [
+      //   { value: '0-1',label: '0 to 20' },
+      //   { value: '0-20',label: '0 to 20' },
+      //   { value: '0-20',label: '0 to 20' },
+      //   { value: '0-20',label: '0 to 20' },
+      //   { value: '0-20',label: '0 to 20' },
+
         return (
           <div>
            
@@ -42,8 +51,27 @@ handleSubmit = (event) => {
             <TextField className="feeling" type="number" min='1' max='5' onChange={this.handleChange} />
             {/* <input className="feeling" type="number" onChange={(e) => this.handleChange(e)} /> */}
             {/* <Link to='/understanding'><button type="submit" >Submit</button> </Link> */}
-            <Button variant="outlined" type="submit" >Submit</Button>
+            <Button variant="outlined" color="blue" type="submit" >Submit</Button>
            
+
+
+{/* 
+            <TextField
+          select
+          label="With Select"
+          className={classNames(classes.margin, classes.textField)}
+          value={this.state.range}
+          onChange={this.handleChange('range')}
+          InputProps={{
+            startAdornment: <InputAdornment position="start">Feeling</InputAdornment>,
+          }}
+        >
+          {ranges.map(option => (
+            <MenuItem key={option.value} value={option.value}>
+              {option.label}
+            </MenuItem> */}
+
+
             <br/>
             </form>
           </div>
