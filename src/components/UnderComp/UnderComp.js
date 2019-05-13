@@ -16,7 +16,7 @@ state = {
 // handle change on form input 
 handleChange = ( event) => {
   this.setState({
-    understand : event.target.value
+    understanding : event.target.value
   })
 }
 
@@ -24,7 +24,7 @@ handleChange = ( event) => {
 handleSubmit = (event) => {
   event.preventDefault(); 
  
-  this.props.dispatch({ type: 'UNDERSTAND', payload: this.state.understand})
+  this.props.dispatch({ type: 'UNDERSTAND', payload: this.state.understanding})
   this.props.history.push('/supported'); 
 }
 
@@ -44,7 +44,7 @@ handleSubmit = (event) => {
         <form onSubmit={this.handleSubmit} >
         <h2>How well are you understanding the content ?</h2>
         <TextField className='understand' type="number" min="1" max="5" onChange={this.handleChange} />
-        <Button variant="outlined" type="submit">Submit</Button>
+        <Button variant="outlined" type="submit" >Submit</Button>
         <br/>
         </form>
       </div>

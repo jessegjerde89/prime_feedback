@@ -39,7 +39,7 @@ handleClick = () =>{
         // if all fields are not filled, button is disabled 
 
         if ( this.props.feedback.feeling === '' || 
-            this.props.feedback.understand === '' ||
+            this.props.feedback.understanding === '' ||
             this.props.feedback.support === '' ||
             this.props.feedback.comments === '' ) {
 
@@ -64,7 +64,7 @@ handleClick = () =>{
             {/* Displays all the users entered info from previous components */}
             <h1>Review Your Feedback</h1>
               <h3>Feelings: {this.props.feedback.feeling}</h3>
-              <h3>Understanding: {this.props.feedback.understand}</h3>
+              <h3>Understanding: {this.props.feedback.understanding}</h3>
               <h3>Support: {this.props.feedback.support}</h3>
               <h3>Comments: {this.props.feedback.comments}</h3>
 
