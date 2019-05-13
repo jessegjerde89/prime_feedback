@@ -43,7 +43,7 @@ handleClick = () =>{
             this.props.feedback.support === '' ||
             this.props.feedback.comments === '' ) {
 
-            displayButton = (<button disabled className="mdc-button mdc-button--raised"> Complete </button>)
+            displayButton = (<button disabled className="mdc-button mdc-button--raised"> Incomplete </button>)
         } else {
             displayButton = (<button className="mdc-button mdc-button--raised" onClick={this.handleClick}> Complete </button>)
         }
